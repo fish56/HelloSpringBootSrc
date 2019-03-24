@@ -12,6 +12,22 @@ public class Monkey {
     @Value("${monkey.name}")
     private String name;
 
+    @Value("${database.url}")
+    private String url;
+
+    @Value("${db_password}")
+    private String password;
+
+    @GetMapping("/password")
+    public String getPassword(){
+        return password;
+    }
+
+    @GetMapping("/url")
+    public String getUrl(){
+        return url;
+    }
+
     @GetMapping
     public String getMonkey(){
         return name;
